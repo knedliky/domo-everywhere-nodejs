@@ -17,4 +17,5 @@ module.exports = {
     ACCESS_TOKEN_URL,
     EMBED_TOKEN_URL,
     EMBED_URL,
+    API_HOST
 }
