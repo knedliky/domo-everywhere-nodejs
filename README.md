@@ -25,7 +25,7 @@ This example is derived from Domo's public `node.js` [example](https://github.co
    - `operator` will specify how the filter values will be handled
      - Valid options are: "IN", "NOT_IN", "EQUALS", "NOT_EQUALS", "GREATER_THAN", "GREAT_THAN_EQUALS_TO", "LESS_THAN", "LESS_THAN_EQUALS_TO"
    - `values` is a string of comma separated values that will be filtered
-4. Modify the `.env` file in the home directory of the project with the following information:
+4. Create the `.env` environmental file in the home directory of the project with the following information:
    - `CLIENT_ID` is the client ID created from the developer portal
    - `CLIENT_SECRET` is the client secret created from the developer portal
    - `EMBED_ID` is the embed ID of the content
