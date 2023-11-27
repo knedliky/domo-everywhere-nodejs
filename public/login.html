@@ -1,0 +1,24 @@
+<head>
+  <link rel="stylesheet" href="css/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
+  <script src="./middleware/jsapi.js"></script>
+</head>
+
+<body>
+  <div class="login-container">
+    <h2>Portal account log in</h2>
+    <form action="/login" method='post' class="login-form">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="'username" name="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="form-group">
+        <button type="submit">Login</button>
+      </div>
+    </form>
+  </div>
+</body>
