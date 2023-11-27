@@ -40,8 +40,8 @@ This example is derived from Domo's public `node.js` [example](https://github.co
 4. Navigate to `localhost:3001`/ `127.0.0.1:3001` (or the custom port specified earlier) and log in using a username listed in the authentication dataset and ANY password. Password authentication has not yet been added and is unnecessary for demonstation purposes
 
 ## Common Issues
-- If your dataset has a one to one mapping for users to the filter values that need to be combined into a single value, create a dataflow where you can use the `Group By` MagicETL tile and aggregate the values using the `Combined by strings separated by ,` option
-- Ensure that the schema of the dataset is exactly as written. Otherwise, values for the validated user object may not populate correctly and the dashboard will not render correctly
+- If your dataset has a one to one mapping for users to the filter values that need to be combined into a single value, create a dataflow where you can use the `Group By` MagicETL tile and aggregate the values using the `Combined by strings separated by ,` option. This may cause more issues downstream if the list of filter values is large due to size constraints of Domo column fields as well as browser implemented JWT size limits (8kb). A workaround could be to create an abstracted column in the dataset as a group of values. For example, rather than exhaustively listing every single country in the Asia Pacific region, an `APAC` region could be created and applied as the new filter column value.
+- Ensure that the schema of the authentication dataset is exactly as written. If not, values for the validated user object may not populate correctly and the dashboard will not render correctly
 - Ensure that the value for `values` is a single string surrounded by quotes. In Domo, this will look like a column as a text data type, with no visible quotes around the string
 
 ## TODO
@@ -51,5 +51,5 @@ This example is derived from Domo's public `node.js` [example](https://github.co
 - [ ] Refactor project structure to separate concerns
 
 ## Support
-- This project utilised information documented on the [Domo Developer Portal](https://developer.domo.com/) including API documentation
-- This project is not regularly maintained, so [Domo Central](https://www.domo.com/domo-central) is the best place to go for any specific questions, although please feel free to reach out with any questions or feedback!
+- This project utilised information documented on the [Domo Developer Portal](https://developer.domo.com/) including relevant API documentation and Domo Everywhere documentation
+- This project is not regularly maintained, therefore, [Domo Central](https://www.domo.com/domo-central) is the best place to go for any specific questions, although please feel free to reach out with any questions or feedback!
