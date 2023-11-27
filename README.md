@@ -15,7 +15,7 @@ This example is derived from Domo's public `node.js` [example](https://github.co
 
 1. If you have not created a dashboard or card to embed, create one in your Domo environment
 2. Embed the dashboard or card using the 'Private' embed option
-   - In the popup modal, copy the `Embed ID` which should be an alphanumeric code with 5 characters in the 'Advanced Settings'
+   - In the popup modal, copy the `Embed ID` which should be an alphanumeric code with 5 characters in 'Additional information'
    - Alternatively, you can find this embed code from the Admin Settings -> Domo Everywhere -> Embed page, navigating to either the 'Cards' or 'Dashboards' tab to find the embeddable content and it's ID
 
 3. Create a dataset with the desired permissions. The schema should be `username`, `embed_id`, `column`, `operator` and `values`. Creating an admin user with a wildcard value such as `region` `NOT_IN` `*`. Including a count of column filter values as `value_counts` option can also be useful to show the numbner of values a certain user has access to
@@ -25,7 +25,7 @@ This example is derived from Domo's public `node.js` [example](https://github.co
    - `operator` will specify how the filter values will be handled
      - Valid options are: "IN", "NOT_IN", "EQUALS", "NOT_EQUALS", "GREATER_THAN", "GREAT_THAN_EQUALS_TO", "LESS_THAN", "LESS_THAN_EQUALS_TO"
    - `values` is a string of comma separated values that will be filtered
-4. Modify the `.env` file in the home directory of the project with the following information:
+4. Create the `.env` environmental file in the home directory of the project with the following information:
    - `CLIENT_ID` is the client ID created from the developer portal
    - `CLIENT_SECRET` is the client secret created from the developer portal
    - `EMBED_ID` is the embed ID of the content
