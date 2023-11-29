@@ -49,9 +49,10 @@ This example is derived from Domo's public `node.js` [example](https://github.co
 ## TODO
 
 - [x] Change authentication method to be programmatic
+- [ ] Refactor project structure to separate concerns (in progress)
+- [ ] Add unit tests with 100% coverage (in progress)
 - [ ] Add an SSO example, demonstrating a user logging in as a named Domo user
-- [ ] Password authentication
-- [x] Refactor project structure to separate concerns
+- [ ] Add password authentication
 
 ## Support
 

@@ -34,14 +34,13 @@ passport.use(new LocalStrategy(
 
 const router = express.Router();
 
-router.post('/login', passport.authenticate('local', { failureFlash: true }), function (req, res) {
+router.post('/login', passport.authenticate('local', { failureRedirect: '/login' }), (req, res) => {
     res.redirect('/dashboard');
 });
 
 router.get('/dashboard', isAuthenticated, (req, res, next) => {
     fs.readFile(path.join(__dirname, '../public/dashboard.html'), 'utf8', function (err, contents) {
         let newContents = contents.replace('Username', `${req.user.username}`);
-        newContents = newContents.replace('REPLACE_IFRAME_FROM_ENV', process.env.REPLACE_IFRAME);
         res.send(newContents);
     });
 });
@@ -57,6 +56,11 @@ router.get('/embed/items/:itemId', isAuthenticated, (req, res, next) => {
 
 router.get('/embed/page', isAuthenticated, (req, res, next) => {
     embed.showFilters(req, res);
+});
+
+router.get('/logout', isAuthenticated, (req, res) => {
+    req.logout();
+    res.redirect('/');
 });
 
 module.exports = router;

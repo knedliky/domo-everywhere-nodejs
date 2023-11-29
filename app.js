@@ -10,7 +10,7 @@ const app = express();
 
 if (!process.env.EMBED_ID || !process.env.CLIENT_ID || !process.env.CLIENT_SECRET || !process.env.EMBED_TYPE) {
   console.log('The following variables must be declared in your .env file: EMBED_ID, CLIENT_ID, CLIENT_SECRET, EMBED_TYPE.');
-  return;
+  process.exit(1);
 }
 
 app.use(bodyParser.urlencoded({ extended: false }));

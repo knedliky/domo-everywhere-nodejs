@@ -11,9 +11,4 @@ router.get('/login', (req, res) => {
     res.render('login', { message: req.flash('error') });
 });
 
-router.get('/logout', function (req, res) {
-    req.logout();
-    res.redirect('/');
-});
-
 module.exports = router;
