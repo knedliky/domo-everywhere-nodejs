@@ -1,10 +1,10 @@
 const axios = require('axios');
-const embed = require('../middleware/embed.js');
 const express = require('express');
 const passport = require('passport');
 const path = require('path');
 const fs = require('fs');
 const LocalStrategy = require('passport-local');
+const embed = require('../middleware/embed.js');
 const findUser = require('../services/userService.js');
 
 function isAuthenticated(req, res, next) {
@@ -39,7 +39,7 @@ router.post('/login', passport.authenticate('local', { failureRedirect: '/login'
 });
 
 router.get('/dashboard', isAuthenticated, (req, res, next) => {
-    fs.readFile(path.join(__dirname, '../public/dashboard.html'), 'utf8', function (err, contents) {
+    fs.readFile(path.join(__dirname, '../../public/dashboard.html'), 'utf8', function (err, contents) {
         let newContents = contents.replace('Username', `${req.user.username}`);
         res.send(newContents);
     });

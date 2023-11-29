@@ -3,7 +3,7 @@ const express = require('express');
 const session = require('express-session');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-const authRouter = require('./auth.js');
+const authRouter = require('../../../src/routes/auth.js');
 
 const app = express();
 app.use(express.urlencoded({ extended: false }));
@@ -13,7 +13,7 @@ app.use(passport.session());
 app.use('/', authRouter);
 
 // Mock user service
-jest.mock('../services/userService.js', () => {
+jest.mock('../../../src/services/userService.js', () => {
     return jest.fn().mockImplementation((username, cb) => {
         if (username === 'test') {
             cb(null, { username: 'test' });
@@ -31,7 +31,7 @@ describe('Authentication Routes', () => {
     it('should redirect to /dashboard after successful login', async () => {
         const response = await request(app)
             .post('/login')
-            .send({ username: 'test', password: 'password' });
+            .send({ 'username': 'test', 'password': 'password' });
 
         expect(response.status).toBe(302);
         expect(response.header.location).toBe('/dashboard');

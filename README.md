@@ -1,3 +1,7 @@
+<img src="src/public/images/domo_logo.svg"
+     alt="Markdown Monster icon"
+     style="float: left; margin: 8px; height:80px;" />
+
 # Domo Everywhere Embedded Analytics Demo
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](http://www.opensource.org/licenses/MIT)
@@ -25,6 +29,9 @@ This example is derived from Domo's public `node.js` [example](https://github.co
    - `operator` will specify how the filter values will be handled
      - Valid options are: "IN", "NOT_IN", "EQUALS", "NOT_EQUALS", "GREATER_THAN", "GREAT_THAN_EQUALS_TO", "LESS_THAN", "LESS_THAN_EQUALS_TO"
    - `values` is a string of comma separated values that will be filtered
+
+![](public/images/authentication_dataset.png)
+
 4. Create the `.env` environmental file in the home directory of the project with the following information:
    - `CLIENT_ID` is the client ID created from the developer portal
    - `CLIENT_SECRET` is the client secret created from the developer portal
