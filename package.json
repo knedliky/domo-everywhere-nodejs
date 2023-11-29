@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "src/scripts/start",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "dependencies": {
     "axios": "^0.24.0",

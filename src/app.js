@@ -8,11 +8,6 @@ const authRouter = require('./routes/auth.js');
 
 const app = express();
 
-if (!process.env.EMBED_ID || !process.env.CLIENT_ID || !process.env.CLIENT_SECRET || !process.env.EMBED_TYPE || !process.env.AUTH_DATASET_ID) {
-  console.log('The following variables must be declared in your .env file: EMBED_ID, CLIENT_ID, CLIENT_SECRET, EMBED_TYPE, AUTH_DATASET_ID.');
-  process.exit(1);
-}
-
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(session({

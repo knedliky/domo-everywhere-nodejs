@@ -58,4 +58,4 @@ async function findUser(username, callback) {
     return callback(null)
 }
 
-module.exports = findUser;
+module.exports = { findUser, getUser };

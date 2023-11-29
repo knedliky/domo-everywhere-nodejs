@@ -5,7 +5,7 @@ describe('Server', () => {
     let server;
 
     beforeAll(() => {
-        server = app.listen(3001);
+        server = app.listen(0);
     });
 
     afterAll((done) => {

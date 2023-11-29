@@ -1,7 +1,7 @@
 const request = require('supertest');
 const express = require('express');
 const path = require('path');
-const router = require('./index.js');
+const router = require('../../../src/routes/index.js');
 
 const app = express();
 app.use('/', router);

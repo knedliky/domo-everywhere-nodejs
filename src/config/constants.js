@@ -5,8 +5,14 @@ const EMBED_TOKEN_URL_DASHBOARD = `${API_HOST}/v1/stories/embed/auth`;
 const EMBED_URL_DASHBOARD = `${EMBED_HOST}/embed/pages/`;
 const EMBED_TOKEN_URL_CARD = `${API_HOST}/v1/cards/embed/auth`;
 const EMBED_URL_CARD = `${EMBED_HOST}/cards/`;
-var EMBED_TOKEN_URL = EMBED_TOKEN_URL_DASHBOARD;
-var EMBED_URL = EMBED_URL_DASHBOARD;
+
+let EMBED_TOKEN_URL;
+let EMBED_URL;
+
+if (process.env.EMBED_TYPE === 'dashboard') {
+    EMBED_TOKEN_URL = EMBED_TOKEN_URL_DASHBOARD;
+    EMBED_URL = EMBED_URL_DASHBOARD;
+}
 
 if (process.env.EMBED_TYPE === 'card') {
     EMBED_TOKEN_URL = EMBED_TOKEN_URL_CARD;
@@ -14,8 +20,13 @@ if (process.env.EMBED_TYPE === 'card') {
 }
 
 module.exports = {
+    API_HOST,
+    EMBED_HOST,
     ACCESS_TOKEN_URL,
+    EMBED_TOKEN_URL_DASHBOARD,
+    EMBED_URL_DASHBOARD,
+    EMBED_TOKEN_URL_CARD,
+    EMBED_URL_CARD,
     EMBED_TOKEN_URL,
-    EMBED_URL,
-    API_HOST
+    EMBED_URL
 }

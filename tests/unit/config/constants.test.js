@@ -1,4 +1,4 @@
-const constants = require('../../../src/config/constants.js');
+const constants = require('../../../src/config/constants');
 
 describe('Constants', () => {
     it('should have the correct API_HOST value', () => {
@@ -32,7 +32,8 @@ describe('Constants', () => {
     it('should have the correct EMBED_TOKEN_URL value based on EMBED_TYPE', () => {
         if (process.env.EMBED_TYPE === 'card') {
             expect(constants.EMBED_TOKEN_URL).toBe(constants.EMBED_TOKEN_URL_CARD);
-        } else {
+        }
+        if (process.env.EMBED_TYPE === 'dashboard') {
             expect(constants.EMBED_TOKEN_URL).toBe(constants.EMBED_TOKEN_URL_DASHBOARD);
         }
     });
@@ -40,7 +41,8 @@ describe('Constants', () => {
     it('should have the correct EMBED_URL value based on EMBED_TYPE', () => {
         if (process.env.EMBED_TYPE === 'card') {
             expect(constants.EMBED_URL).toBe(constants.EMBED_URL_CARD);
-        } else {
+        }
+        if (process.env.EMBED_TYPE === 'dashboard') {
             expect(constants.EMBED_URL).toBe(constants.EMBED_URL_DASHBOARD);
         }
     });

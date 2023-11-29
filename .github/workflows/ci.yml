@@ -5,7 +5,13 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: ArtiomTr/jest-coverage-report-action@v2.2.6
-        with:
-          test-script: yarn test
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      # To generate the coverage report
+      # Add 'json-summary' to coverageReporters in jest options
+      - name: Tests
+        run: yarn test-ci
+      - name: Generate coverage badges
+        uses: jpb06/jest-badges-action@latest
+          with:
+            branches: main, dev, staging
