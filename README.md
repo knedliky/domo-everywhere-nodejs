@@ -4,7 +4,7 @@
 
 # Domo Everywhere Embedded Analytics Demo
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](http://www.opensource.org/licenses/MIT)
+![GitHub](https://img.shields.io/github/license/knedliky/domo-everywhere-nodejs)
 
 This example is derived from Domo's public `node.js` [example](https://github.com/domoinc/domo-node-embed-filters). The aim of this project is to demonstrating programmatic authentication against a dataset imported into Domo, rather than using the hardcoded `users.js` module, which is unrealistic for most Domo Everywhere deployments in production. This should demonstrate how embedding can be integrated in an existing authentication workflow.
 
