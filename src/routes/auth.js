@@ -5,7 +5,7 @@ const path = require('path');
 const fs = require('fs');
 const LocalStrategy = require('passport-local');
 const embed = require('../middleware/embed.js');
-const findUser = require('../services/userService.js');
+const { findUser } = require('../services/userService.js');
 
 function isAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {
